@@ -1,0 +1,424 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    font-family: 'Arial', sans-serif;
+
+    background-color: #1a1a1a;
+
+    color: #C0C0C0;
+
+    line-height: 1.6;
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+header {
+
+    background: linear-gradient(180deg, rgba(0, 54, 89, 1) 0%, rgba(0, 130, 156, 0) 100%);
+
+    padding: 10px;
+
+    position: sticky;
+
+    top: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
+}
+
+
+nav, #nav\ links {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+#nav\ links {
+
+    gap: 30px;
+
+}
+
+
+#nav\ links a {
+
+    color: #C0C0C0;
+
+    text-decoration: none;
+
+    text-transform: uppercase;
+
+}
+
+
+#nav\ links a:hover {
+
+    color: #FF6600;
+
+}
+
+/* topology heree*/
+
+main > h1 {
+    font-size: 2.8rem;
+    text-align: center;
+    margin: 60px 0 40px 0;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #FF6600;
+    border-bottom: 3px solid #FF6600;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+main {
+    text-align: center;
+}
+
+#title_first_floor,
+#title_second_floor {
+    height: 35vh;
+    min-height: 250px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #001f2f, #003659);
+    position: relative;
+    overflow: hidden;
+}
+
+
+#title_first_floor::before,
+#title_second_floor::before {
+    content: "";
+    position: absolute;
+    width: 80%;
+    height: 2px;
+    background: linear-gradient(90deg, #FF6600, #00bcd4);
+    top: 65%;
+}
+
+#title_first_floor h3,
+#title_second_floor h3 {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #ffffff;
+    text-shadow: 0 0 15px #FF6600;
+    z-index: 2;
+}
+
+#title_first_floor h3 {
+    text-shadow: 0 0 20px #FF6600;
+}
+
+#title_second_floor h3 {
+    text-shadow: 0 0 20px #00bcd4;
+}
+
+section {
+
+    min-height: calc(100vh - 80px);
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    text-align: center;
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+    padding: 40px;
+
+    height: 100vh;
+
+    scroll-snap-align: start;
+
+}
+
+/* ===================================== */
+/* CENTER 1:1 POPUP IMAGE FOR FLOORS */
+/* ===================================== */
+
+#first_floor,
+#second_floor {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Fullscreen background image */
+#first_floor img,
+#second_floor img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.6);
+    z-index: 1;
+}
+
+/* Center 1:1 image */
+#first_floor::after,
+#second_floor::after {
+    content: "";
+    position: absolute;
+    width: 260px;
+    height: 260px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 12px;
+    z-index: 2;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* Different images for each floor */
+#first_floor::after {
+    background-image: url("pics/topo_firstfloor.jpg");
+}
+
+#second_floor::after {
+    background-image: url("pics/topo_secondfloor.jpg");
+}
+
+/* Smooth pop-up */
+#first_floor:hover::after,
+#second_floor:hover::after {
+    transform: scale(2.5);
+    box-shadow: 0 0 30px rgba(255, 102, 0, 0.8);
+}
+
+
+/*learn more here*/
+
+
+#history_of_saipem,
+#what_saipem_do {
+    min-height: 100vh;
+    padding: 80px 15%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    position: relative;
+    color: #ffffff;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#history_of_saipem {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)),
+        url("pics/oldthing.jpg");
+}
+
+#what_saipem_do {
+    background-image:
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.75)),
+        url("pics/off.jpeg");
+}
+
+#history_of_saipem h2,
+#what_saipem_do h2 {
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    border-left: 4px solid #FF6600;
+    padding-left: 15px;
+}
+
+#history_of_saipem h3,
+#what_saipem_do h3 {
+    margin-top: 30px;
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    color: #FF6600;
+}
+
+#history_of_saipem p,
+#what_saipem_do p {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    max-width: 900px;
+}
+
+p, pre{
+
+color: #FFFFFF;
+text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000, -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000, -2px 0px 0 #000000, 0px -2px 0 #000000;
+color: #FFFFFF;
+
+}
+
+
+h1, h2, h3 {
+
+    color: #FF6600;
+
+    text-transform: uppercase;
+
+    margin-bottom: 20px;
+
+    letter-spacing: 2px;
+
+    text-shadow: 0 0 10px;
+
+}
+
+
+
+[id="about us"] {
+
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
+
+                      url('pics/rig2_picture.jpg');
+
+}
+
+
+[id="our misson"] {
+
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
+
+                      url('pics/pointing_dude_picture.jpg');
+
+}
+
+
+[id="contact us"] {
+    background-image: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.6)),
+url('pics/hse.jpg');
+}
+/* --- THE HORIZONTAL SERVICES SECTION --- */
+[id="SAIPEM'S service"] {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;  
+    justify-content: center;
+    background-image: url(pics/little-waves-calm-sea-somewhere-greece.jpg);
+}
+[id="SAIPEM'S service"] > h3 {
+    width: 100%;
+    margin-top: 80px;
+    font-size: 2.5rem;
+}
+[id="SAIPEM'S service"] div {
+    flex: 5;            
+    min-width: 250px;  
+    height: 60vh;      
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+    transition: transform 0.3s ease;
+    background-size: cover;        
+    background-position: center;    
+    background-repeat: no-repeat;
+}
+[id="SAIPEM'S service"] div:hover {
+    transform: scale(1.10);
+    z-index: 5;
+    filter: brightness(1.2);
+}
+#Offshore\ Engineering\ \&\ Construction {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('pics/pic2.jpg');
+}
+#Onshore\ Engineering\ \&\ Construction {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('pics/pic5.jpg');
+}
+#Offshore\ Drilling\ Services {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('pics/rig3_picutre.jpg');
+}
+#Onshore\ Drilling\ Services {
+    background-image: linear-gradient(rgba(0,0,0,0.1), rgba(0,0,0,0.7)), url('pics/pic4.jpg');
+}
+/* --- Buttons & Footer --- */
+ button {
+    margin-top: 30px;
+    background-color: #FF6600;
+    border: none;
+    padding: 12px 30px;
+    cursor: pointer;
+    border-radius: 4px;
+    transition: 0.3s;
+}
+button a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+button:hover {
+    background-color: #e65c00;
+    box-shadow: 0 0 15px #FF6600;
+}
+footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 20px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+.footer-section h3 {
+    color: #ff9100;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+}
+.footer-links a, .footer-socials a {
+    display: block;
+    color: #bbb;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: color 0.3s;
+}
+.footer-links a:hover, .footer-socials a:hover {
+    color: #ffffff;
+}
+.footer-bottom {
+    text-align: center;
+    margin-top: 40px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: #777;
+}
+.footer-bottom strong {
+    color: #ff9100;
+}
+hr {
+    border: 0;
+    height: 1px;
+    background: #333;
+}
